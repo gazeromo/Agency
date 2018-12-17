@@ -1,0 +1,39 @@
+﻿<Window x:Class="Agency.BuildingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Agency"
+        mc:Ignorable="d"
+        Title="BuildingWindow" Height="593.797" Width="1258.459">
+    <Grid Margin="0,0,2,-21">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="300" Margin="313,46,0,0" VerticalAlignment="Top" Width="611"/>
+        <Button x:Name="Add" Content="Добавить" HorizontalAlignment="Left" Margin="101,419,0,0" VerticalAlignment="Top" Width="99" Height="39" Click="Add_Click"/>
+        <Button x:Name="Delte" Content="Удалить" HorizontalAlignment="Left" Margin="223,419,0,0" VerticalAlignment="Top" Width="99" Height="39" Click="Delte_Click"/>
+        <Button x:Name="Update" Content="Изменить" HorizontalAlignment="Left" Margin="351,419,0,0" VerticalAlignment="Top" Width="99" Height="39"/>
+        <Button x:Name="Refresh" Content="Обновить" HorizontalAlignment="Left" Margin="976,74,0,0" VerticalAlignment="Top" Width="99" Height="39" Click="Refresh_Click"/>
+        <ComboBox x:Name="typeSelector" HorizontalAlignment="Left" Margin="976,151,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="citySelector" HorizontalAlignment="Left" Margin="976,193,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="streetSelector" HorizontalAlignment="Left" Margin="976,237,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Filter" Content="Фильтрация" HorizontalAlignment="Left" Margin="979,281,0,0" VerticalAlignment="Top" Width="117" Height="27" Click="Filter_Click"/>
+        <TextBox x:Name="city" HorizontalAlignment="Left" Height="23" Margin="660,419,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="street" HorizontalAlignment="Left" Height="23" Margin="804,419,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="area" HorizontalAlignment="Left" Height="23" Margin="955,419,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Grid x:Name="apartmentsGrid" HorizontalAlignment="Left" Height="41" Margin="538,487,0,0" VerticalAlignment="Top" Width="508">
+            <TextBox x:Name="aHouseNumber" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="aApartNumber" HorizontalAlignment="Left" Height="23" Margin="150,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="aRooms" HorizontalAlignment="Left" Height="23" Margin="299,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        </Grid>
+        <ComboBox x:Name="updTypeSelector" HorizontalAlignment="Left" Margin="500,420,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="UpdTypeSelector_SelectionChanged"/>
+        <Grid x:Name="housesGrid" HorizontalAlignment="Left" Height="41" Margin="538,487,0,0" VerticalAlignment="Top" Width="508">
+            <TextBox x:Name="hHouseNumber" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="hRooms" HorizontalAlignment="Left" Height="23" Margin="150,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            
+        </Grid>
+        <Grid x:Name="sitesGrid" HorizontalAlignment="Left" Height="41" Margin="538,487,0,0" VerticalAlignment="Top" Width="508">
+            <TextBox x:Name="sLat" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="sLon" HorizontalAlignment="Left" Height="23" Margin="150,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        </Grid>
+
+    </Grid>
+</Window>

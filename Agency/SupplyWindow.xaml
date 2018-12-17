@@ -1,0 +1,16 @@
+﻿<Window x:Class="Agency.SupplyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Agency"
+        mc:Ignorable="d"
+        Title="SupplyWindow" Height="754.342" Width="1283.834">
+    <Grid>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="381" Margin="309,50,0,0" VerticalAlignment="Top" Width="697"/>
+        <Button x:Name="Add" Content="Добавить" HorizontalAlignment="Left" Margin="126,521,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="Delete" Content="Изменить" HorizontalAlignment="Left" Margin="260,521,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="Update" Content="Удалить" HorizontalAlignment="Left" Margin="390,521,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

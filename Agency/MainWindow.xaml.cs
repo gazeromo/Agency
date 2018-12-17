@@ -36,5 +36,11 @@ namespace Agency
             AgentWindow window = new AgentWindow();
             window.Show();
         }
+
+        private void Buildings_Click(object sender, RoutedEventArgs e)
+        {
+            BuildingWindow window = new BuildingWindow();
+            window.Show();
+        }
     }
 }
