@@ -5,13 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Agency"
         mc:Ignorable="d"
-        Title="ClientWindow" Height="450" Width="800">
+        Title="ClientWindow" Height="514" Width="1165">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="245" Margin="42,33,0,0" VerticalAlignment="Top" Width="658"/>
-        <Button x:Name="Add" Content="Добавить" HorizontalAlignment="Left" Margin="28,327,0,0" VerticalAlignment="Top" Width="114" Height="32"/>
-        <Button x:Name="Delete" Content="Удалить" HorizontalAlignment="Left" Margin="180,327,0,0" VerticalAlignment="Top" Width="94" Height="32"/>
-        <Button x:Name="Update" Content="Изменить" HorizontalAlignment="Left" Margin="279,327,0,0" VerticalAlignment="Top" Width="94" Height="32"/>
-        <Button x:Name="Button" Content="Обновить" HorizontalAlignment="Left" Margin="705,50,0,0" VerticalAlignment="Top" Width="82" Height="32"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="245" Margin="42,33,0,0" VerticalAlignment="Top" Width="862" SelectionChanged="DataGrid_SelectionChanged"/>
+        <Button x:Name="Add" Content="Добавить" HorizontalAlignment="Left" Margin="28,327,0,0" VerticalAlignment="Top" Width="114" Height="32" Click="Add_Click"/>
+        <Button x:Name="Delete" Content="Удалить" HorizontalAlignment="Left" Margin="180,327,0,0" VerticalAlignment="Top" Width="94" Height="32" Click="Delete_Click"/>
+        <Button x:Name="Update" Content="Изменить" HorizontalAlignment="Left" Margin="279,327,0,0" VerticalAlignment="Top" Width="94" Height="32" Click="Update_Click"/>
+        <Button x:Name="Button" Content="Обновить" HorizontalAlignment="Left" Margin="945,48,0,0" VerticalAlignment="Top" Width="82" Height="32" Click="Button_Click"/>
+        <TextBox x:Name="xname" HorizontalAlignment="Left" Height="23" Margin="395,327,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="xlastname" HorizontalAlignment="Left" Height="23" Margin="538,327,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="xmiddlename" HorizontalAlignment="Left" Height="23" Margin="678,327,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="xphone" HorizontalAlignment="Left" Height="23" Margin="819,327,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="xemail" HorizontalAlignment="Left" Height="23" Margin="960,327,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

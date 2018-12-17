@@ -27,7 +27,8 @@ namespace Agency
 
         private void Clients_Click(object sender, RoutedEventArgs e)
         {
-            Client
+            ClientWindow window = new ClientWindow();
+            window.Show();
         }
 
         private void Agents_Click(object sender, RoutedEventArgs e)

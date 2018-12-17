@@ -65,6 +65,12 @@
     <Compile Include="AddAgent.xaml.cs">
       <DependentUpon>AddAgent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddClient.xaml.cs">
+      <DependentUpon>AddClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClientWindow.xaml.cs">
+      <DependentUpon>ClientWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SqlConnect.cs" />
     <Page Include="AddAgent.xaml">
       <SubType>Designer</SubType>
@@ -73,6 +79,14 @@
     <Page Include="AgentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ClientWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
