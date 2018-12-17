@@ -10,30 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Agency
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ClientWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ClientWindow : Window
     {
-        public MainWindow()
+        public ClientWindow()
         {
             InitializeComponent();
-        }
-
-        private void Clients_Click(object sender, RoutedEventArgs e)
-        {
-            Client
-        }
-
-        private void Agents_Click(object sender, RoutedEventArgs e)
-        {
-            AgentWindow window = new AgentWindow();
-            window.Show();
         }
     }
 }
