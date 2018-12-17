@@ -42,5 +42,17 @@ namespace Agency
             BuildingWindow window = new BuildingWindow();
             window.Show();
         }
+
+        private void Supply_Click(object sender, RoutedEventArgs e)
+        {
+            SupplyWindow window = new SupplyWindow();
+            window.Show();
+        }
+
+        private void Demand_Click(object sender, RoutedEventArgs e)
+        {
+            DemandWindow window = new DemandWindow();
+            window.Show();
+        }
     }
 }

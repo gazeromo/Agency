@@ -17,11 +17,11 @@ using System.Windows.Shapes;
 namespace Agency
 {
     /// <summary>
-    /// Interaction logic for SupplyWindow.xaml
+    /// Interaction logic for DemandWindow.xaml
     /// </summary>
-    public partial class SupplyWindow : Window
+    public partial class DemandWindow : Window
     {
-        public SupplyWindow()
+        public DemandWindow()
         {
             InitializeComponent();
             Refresh();
@@ -30,7 +30,8 @@ namespace Agency
             SqlCommand command = new SqlCommand("select * from agents", connection);
             using (SqlDataReader reader = command.ExecuteReader())
             {
-                while (reader.Read()) {
+                while (reader.Read())
+                {
                     agentSelector.Items.Add(reader[0].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString());
                 }
             }
@@ -42,46 +43,49 @@ namespace Agency
                     clientSelector.Items.Add(reader[0].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString());
                 }
             }
-            SqlCommand command2 = new SqlCommand("select * from buildings", connection);
-            using (SqlDataReader reader = command2.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    buildingSelector.Items.Add(reader[0].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString());
-                }
-            }
 
             connection.Close();
             agentSelector.SelectedIndex = 0;
             clientSelector.SelectedIndex = 0;
-            buildingSelector.SelectedIndex = 0;
         }
 
         private void Refresh()
         {
             SqlConnection connection = new SqlConnection(SqlConnect.Instance);
             connection.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter("select * from supplies", connection);
+            SqlDataAdapter adapter = new SqlDataAdapter("select * from demands", connection);
             DataTable table = new DataTable();
             adapter.Fill(table);
             dataGrid.ItemsSource = table.AsDataView();
             connection.Close();
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Delete_Click(object sender, RoutedEventArgs e)
         {
+            if (dataGrid.Items.Count > 0)
+            {
+                DataRowView row = (DataRowView)dataGrid.SelectedItems[0];
+                SqlConnection connection = new SqlConnection(SqlConnect.Instance);
+                connection.Open();
+                SqlCommand command = new SqlCommand($"delete from demands where id = {Convert.ToInt32(row[0])}", connection);
+                command.ExecuteNonQuery();
+                connection.Close();
 
+            }
+            Refresh();
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             int agentId = Convert.ToInt32(agentSelector.SelectedValue.ToString().Substring(0, agentSelector.SelectedValue.ToString().IndexOf(" ")));
             int clientId = Convert.ToInt32(clientSelector.SelectedValue.ToString().Substring(0, clientSelector.SelectedValue.ToString().IndexOf(" ")));
-            int buildingId = Convert.ToInt32(buildingSelector.SelectedValue.ToString().Substring(0, buildingSelector.SelectedValue.ToString().IndexOf(" ")));
-            int pricing = Convert.ToInt32(price.Text);
+            int uMinPrice = Convert.ToInt32(minPrice.Text);
+            int uMaxPrice = Convert.ToInt32(maxPrice.Text);
+            int uMinArea = Convert.ToInt32(minArea.Text);
+            int uMaxArea = Convert.ToInt32(maxArea.Text);
             SqlConnection connection = new SqlConnection(SqlConnect.Instance);
             connection.Open();
-            SqlCommand command = new SqlCommand($"insert into supplies values ({agentId}, {clientId}, {buildingId}, {pricing})", connection);
+            SqlCommand command = new SqlCommand($"insert into demands values ({agentId}, {clientId}, {uMinPrice}, {uMaxPrice}, {uMinArea}, {uMaxArea})", connection);
             command.ExecuteNonQuery();
             connection.Close();
             Refresh();
@@ -89,31 +93,18 @@ namespace Agency
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-            int updId = Convert.ToInt32(id.Text);
             int agentId = Convert.ToInt32(agentSelector.SelectedValue.ToString().Substring(0, agentSelector.SelectedValue.ToString().IndexOf(" ")));
             int clientId = Convert.ToInt32(clientSelector.SelectedValue.ToString().Substring(0, clientSelector.SelectedValue.ToString().IndexOf(" ")));
-            int buildingId = Convert.ToInt32(buildingSelector.SelectedValue.ToString().Substring(0, buildingSelector.SelectedValue.ToString().IndexOf(" ")));
-            int pricing = Convert.ToInt32(price.Text);
+            int uMinPrice = Convert.ToInt32(minPrice.Text);
+            int uMaxPrice = Convert.ToInt32(maxPrice.Text);
+            int uMinArea = Convert.ToInt32(minArea.Text);
+            int uMaxArea = Convert.ToInt32(maxArea.Text);
+            int uId = Convert.ToInt32(id.Text);
             SqlConnection connection = new SqlConnection(SqlConnect.Instance);
             connection.Open();
-            SqlCommand command = new SqlCommand($"update supplies set agent = {agentId}, client = {clientId}, building = {buildingId}, price = {pricing} where id = {updId}", connection);
+            SqlCommand command = new SqlCommand($"update demands set agent = {agentId}, client = {clientId}, min_price = {uMinPrice}, max_price = {uMaxPrice}, min_area = {uMinArea}, max_area = {uMaxArea} where id = {uId}", connection);
             command.ExecuteNonQuery();
             connection.Close();
-            Refresh();
-        }
-
-        private void Delete_Click(object sender, RoutedEventArgs e)
-        {
-            if(dataGrid.Items.Count > 0)
-            {
-                DataRowView row = (DataRowView)dataGrid.SelectedItems[0];
-                SqlConnection connection = new SqlConnection(SqlConnect.Instance);
-                connection.Open();
-                SqlCommand command = new SqlCommand($"delete from supplies where id = {Convert.ToInt32(row[0])}", connection);
-                command.ExecuteNonQuery();
-                connection.Close();
-                
-            }
             Refresh();
         }
     }

@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Agency"
         mc:Ignorable="d"
-        Title="SupplyWindow" Height="754.342" Width="1283.834">
+        Title="SupplyWindow" Height="656.342" Width="1283.834">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="381" Margin="309,50,0,0" VerticalAlignment="Top" Width="697"/>
-        <Button x:Name="Add" Content="Добавить" HorizontalAlignment="Left" Margin="126,521,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="Delete" Content="Изменить" HorizontalAlignment="Left" Margin="260,521,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="Update" Content="Удалить" HorizontalAlignment="Left" Margin="390,521,0,0" VerticalAlignment="Top" Width="75"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="381" Margin="309,50,0,0" VerticalAlignment="Top" Width="697" SelectionChanged="DataGrid_SelectionChanged"/>
+        <Button x:Name="Add" Content="Добавить" HorizontalAlignment="Left" Margin="130,472,0,0" VerticalAlignment="Top" Width="103" Height="49" Click="Add_Click"/>
+        <Button x:Name="Update" Content="Изменить" HorizontalAlignment="Left" Margin="271,472,0,0" VerticalAlignment="Top" Width="99" Height="49" Click="Update_Click"/>
+        <Button x:Name="Delete" Content="Удалить" HorizontalAlignment="Left" Margin="129,246,0,0" VerticalAlignment="Top" Width="104" Height="48" Click="Delete_Click"/>
+        <ComboBox x:Name="agentSelector" HorizontalAlignment="Left" Margin="129,573,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="clientSelector" HorizontalAlignment="Left" Margin="260,573,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="buildingSelector" HorizontalAlignment="Left" Margin="394,573,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="price" HorizontalAlignment="Left" Height="23" Margin="545,573,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="id" HorizontalAlignment="Left" Height="23" Margin="405,487,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
