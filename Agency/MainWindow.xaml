@@ -12,6 +12,6 @@
         <Button x:Name="buildings" Content="Недвижимость" HorizontalAlignment="Left" Margin="138,235,0,0" VerticalAlignment="Top" Width="102" Height="42" Click="Buildings_Click"/>
         <Button x:Name="supply" Content="Предложение" HorizontalAlignment="Left" Margin="253,141,0,0" VerticalAlignment="Top" Width="102" Height="42" Click="Supply_Click"/>
         <Button x:Name="demand" Content="Потребность" HorizontalAlignment="Left" Margin="253,188,0,0" VerticalAlignment="Top" Width="102" Height="42" Click="Demand_Click"/>
-        <Button x:Name="deal" Content="Сделка" HorizontalAlignment="Left" Margin="253,235,0,0" VerticalAlignment="Top" Width="102" Height="42"/>
+        <Button x:Name="deal" Content="Сделка" HorizontalAlignment="Left" Margin="253,235,0,0" VerticalAlignment="Top" Width="102" Height="42" Click="Deal_Click"/>
     </Grid>
 </Window>

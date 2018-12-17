@@ -54,5 +54,11 @@ namespace Agency
             DemandWindow window = new DemandWindow();
             window.Show();
         }
+
+        private void Deal_Click(object sender, RoutedEventArgs e)
+        {
+            DealWindow window = new DealWindow();
+            window.Show();
+        }
     }
 }

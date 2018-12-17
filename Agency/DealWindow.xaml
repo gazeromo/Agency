@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Agency"
         mc:Ignorable="d"
-        Title="DealWindow" Height="450" Width="800">
+        Title="DealWindow" Height="620.695" Width="1092.669">
     <Grid>
-        
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="247" Margin="214,65,0,0" VerticalAlignment="Top" Width="417"/>
+        <Button x:Name="Delete" Content="Удалить" HorizontalAlignment="Left" Margin="84,185,0,0" VerticalAlignment="Top" Width="99" Height="54" Click="Delete_Click"/>
+        <Button x:Name="Add" Content="Добавить" HorizontalAlignment="Left" Margin="84,442,0,0" VerticalAlignment="Top" Width="99" Height="50" Click="Add_Click"/>
+        <Button x:Name="Update" Content="Изменить" HorizontalAlignment="Left" Margin="214,442,0,0" VerticalAlignment="Top" Width="97" Height="50" Click="Update_Click"/>
+        <ComboBox x:Name="supply" HorizontalAlignment="Left" Margin="477,456,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="demand" HorizontalAlignment="Left" Margin="654,456,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="id" HorizontalAlignment="Left" Height="23" Margin="214,531,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="dataGrid1" HorizontalAlignment="Left" Height="247" Margin="702,65,0,0" VerticalAlignment="Top" Width="324"/>
+
     </Grid>
 </Window>

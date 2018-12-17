@@ -107,5 +107,73 @@ namespace Agency
             connection.Close();
             Refresh();
         }
+
+        private void QuickDeal_Click(object sender, RoutedEventArgs e)
+        {
+            if(dataGrid.Items.Count > 0)
+            {
+                List<int> tIds = new List<int>();
+                List<int> buildingIds = new List<int>();
+                List<int> prices = new List<int>();
+                DataRowView row = (DataRowView)dataGrid.SelectedItems[0];
+                int id = Convert.ToInt32(row[0]);
+                int minPrice = Convert.ToInt32(row[3]);
+                int maxPrice = Convert.ToInt32(row[4]);
+                int minArea = Convert.ToInt32(row[5]);
+                int maxArea = Convert.ToInt32(row[6]);
+                SqlConnection connection = new SqlConnection(SqlConnect.Instance);
+                connection.Open();
+                SqlCommand sql = new SqlCommand("select * from supplies", connection);
+                using (SqlDataReader reader = sql.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        int tId = Convert.ToInt32(reader[0]);
+                        int buildingId = Convert.ToInt32(reader[3]);
+                        int price = Convert.ToInt32(reader[4]);
+                        tIds.Add(tId);
+                        buildingIds.Add(buildingId);
+                        prices.Add(price);
+                        
+                    }
+                }
+                
+                if (tIds.Count > 0)
+                {
+                    int tId = tIds[0];
+                    int buildingId = buildingIds[0];
+                    int price = prices[0];
+                    int area = 0;
+                    SqlCommand sql1 = new SqlCommand($"select area from buildings where id = {buildingId}", connection);
+                    bool flag = false;
+                    using (SqlDataReader reader1 = sql1.ExecuteReader())
+                    {
+                        while (reader1.Read())
+                        {
+                            area = Convert.ToInt32(reader1[0]);
+                            
+                                flag = true;
+                           
+                        }
+                    }
+                    if (!flag)
+                    {
+                        MessageBox.Show("Не удалось найти подходящюю сделку(");
+                    } else
+                    {
+                    if (price >= minPrice && price <= maxPrice && area >= minArea && area <= maxArea)
+                    {
+                        SqlCommand insertCommand = new SqlCommand($"insert into deals values ({tId}, {id})", connection);
+                        insertCommand.ExecuteNonQuery();
+                        }
+                        MessageBox.Show("Мы подобрали предложение!");
+                    }
+
+
+                } 
+                connection.Close();
+            }
+            
+        }
     }
 }

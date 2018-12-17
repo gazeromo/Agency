@@ -18,6 +18,7 @@
         <ComboBox x:Name="agentSelector" HorizontalAlignment="Left" Margin="530,411,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="clientSelector" HorizontalAlignment="Left" Margin="695,411,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="id" HorizontalAlignment="Left" Height="23" Margin="195,509,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="quickDeal" Content="Быстрая сделка" HorizontalAlignment="Left" Margin="988,162,0,0" VerticalAlignment="Top" Width="103" Height="26" Click="QuickDeal_Click"/>
 
     </Grid>
 </Window>
