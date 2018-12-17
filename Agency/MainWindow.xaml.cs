@@ -24,5 +24,16 @@ namespace Agency
         {
             InitializeComponent();
         }
+
+        private void Clients_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Agents_Click(object sender, RoutedEventArgs e)
+        {
+            AgentWindow window = new AgentWindow();
+            window.Show();
+        }
     }
 }

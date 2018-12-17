@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Agency"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="446.278" Width="911.654">
     <Grid>
-        
+        <Button x:Name="clients" Content="Клиенты" HorizontalAlignment="Left" Margin="138,141,0,0" VerticalAlignment="Top" Width="102" Height="42" Click="Clients_Click"/>
+        <Button x:Name="agents" Content="Агенты" HorizontalAlignment="Left" Margin="138,188,0,0" VerticalAlignment="Top" Width="102" Height="42" Click="Agents_Click"/>
+        <Button x:Name="button_Copy1" Content="Недвижимость" HorizontalAlignment="Left" Margin="138,235,0,0" VerticalAlignment="Top" Width="102" Height="42"/>
     </Grid>
 </Window>
