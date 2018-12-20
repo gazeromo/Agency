@@ -5,17 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Agency"
         mc:Ignorable="d"
-        Title="AgentWindow" Height="614.098" Width="1248.308">
+        Title="AgentWindow" Height="614.098" Width="1137.308">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="370" Margin="129,30,0,0" VerticalAlignment="Top" Width="1000" SelectionChanged="DataGrid_SelectionChanged"/>
-        <Button x:Name="add" Content="Добавить" HorizontalAlignment="Left" Margin="23,421,0,0" VerticalAlignment="Top" Width="186" Height="55" Click="Add_Click"/>
-        <Button x:Name="delete" Content="Удалить" HorizontalAlignment="Left" Margin="298,421,0,0" VerticalAlignment="Top" Width="124" Height="55" Click="Delete_Click"/>
-        <Button x:Name="update" Content="Изменить" HorizontalAlignment="Left" Margin="463,421,0,0" VerticalAlignment="Top" Width="124" Height="55" Click="Update_Click"/>
-        <Button x:Name="button" Content="Обновить" HorizontalAlignment="Left" Margin="1155,56,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox x:Name="xname" HorizontalAlignment="Left" Height="23" Margin="252,515,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="xlastname" HorizontalAlignment="Left" Height="23" Margin="391,515,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="xmiddlename" HorizontalAlignment="Left" Height="23" Margin="528,515,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="xshare" HorizontalAlignment="Left" Height="23" Margin="672,515,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="370" Margin="225,30,0,0" VerticalAlignment="Top" Width="731" SelectionChanged="DataGrid_SelectionChanged" HeadersVisibility="None"/>
+        <Button x:Name="add" Content="Добавить" HorizontalAlignment="Left" Margin="47,32,0,0" VerticalAlignment="Top" Width="144" Height="56" Click="Add_Click" Background="White" FontSize="16" BorderBrush="Black"/>
+        <Button x:Name="delete" Content="Удалить" HorizontalAlignment="Left" Margin="47,106,0,0" VerticalAlignment="Top" Width="144" Height="54" Click="Delete_Click" Background="White" FontSize="16" BorderBrush="Black"/>
+        <Button x:Name="update" Content="Изменить" HorizontalAlignment="Left" Margin="47,431,0,0" VerticalAlignment="Top" Width="144" Height="55" Click="Update_Click" Background="White" FontSize="16" BorderBrush="Black"/>
+        <Button x:Name="button" Content="Обновить" HorizontalAlignment="Left" Margin="1000,56,0,0" VerticalAlignment="Top" Width="106" Click="Button_Click" Height="32" BorderBrush="Black" Background="White"/>
+        <TextBox x:Name="xname" HorizontalAlignment="Left" Height="23" Margin="47,524,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="xlastname" HorizontalAlignment="Left" Height="23" Margin="186,524,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="xmiddlename" HorizontalAlignment="Left" Height="23" Margin="323,524,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="xshare" HorizontalAlignment="Left" Height="23" Margin="467,524,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="leven" HorizontalAlignment="Left" Height="23" Margin="808,517,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240" TextChanged="Leven_TextChanged"/>
+        <Label x:Name="levenOut" Content="" HorizontalAlignment="Left" Margin="815,480,0,0" VerticalAlignment="Top" MouseLeftButtonDown="LevenOut_MouseLeftButtonDown"/>
+        <Label x:Name="label" Content="Возможно вы имели ввиду: " HorizontalAlignment="Left" Margin="638,480,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Имя" HorizontalAlignment="Left" Margin="47,498,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label1_Copy" Content="Фамилия" HorizontalAlignment="Left" Margin="186,498,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label1_Copy1" Content="Отчество" HorizontalAlignment="Left" Margin="323,498,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label1_Copy2" Content="Доля от сделки" HorizontalAlignment="Left" Margin="467,498,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="911,431,0,0" VerticalAlignment="Top" Width="120" IsEditable="True"/>
 
     </Grid>
 </Window>

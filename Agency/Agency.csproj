@@ -80,6 +80,7 @@
     <Compile Include="DemandWindow.xaml.cs">
       <DependentUpon>DemandWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LevenshteinDistance.cs" />
     <Compile Include="SqlConnect.cs" />
     <Compile Include="SupplyWindow.xaml.cs">
       <DependentUpon>SupplyWindow.xaml</DependentUpon>

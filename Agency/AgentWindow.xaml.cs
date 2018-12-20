@@ -26,6 +26,7 @@ namespace Agency
         {
             InitializeComponent();
             Refresh();
+            comboBox.Items.Add("Helo");
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -119,6 +120,42 @@ namespace Agency
             }
             
 
+        }
+
+        private void Leven_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = leven.Text;
+            SqlConnection connection = new SqlConnection(SqlConnect.Instance);
+            connection.Open();
+            SqlCommand command = new SqlCommand("select name, lastname, middlename from agents", connection);
+            List<string> list = new List<string>();
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while(reader.Read())
+                {
+                    list.Add(reader[0].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString());
+                }
+            }
+            connection.Close();
+
+            SortedDictionary<int, string> map = new SortedDictionary<int, string>();
+            foreach(string item in list)
+            {
+                try
+                {
+                    map.Add(LevenshteinDistance.Compute(text, item), item);
+                } catch (Exception)
+                {
+                    
+                }
+            }
+            
+            levenOut.Content = map.Values.First();
+        }
+
+        private void LevenOut_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            leven.Text = levenOut.Content as string;
         }
     }
 }
